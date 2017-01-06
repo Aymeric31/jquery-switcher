@@ -1,10 +1,33 @@
 var species = {
-	cat    : "cat.jpg",
-	bear   : "bear.jpg",
-	fish   : "fish.jpg"
+	cat    : "img/cat.jpg",
+	bear   : "img/bear.jpg",
+	fish   : "img/fish.jpg"
 };
 
 function main(){
+
+	$(".ui.button").click(function(){
+		var type= this.getAttribute("data-animal");
+
+		if (type == "cat"){
+			var chat = species["cat"];
+			$("#holder").html("<img src='" + chat + "'/>");
+		} else if (type == "bear"){
+			var ours = species["bear"];
+			$("#holder").html("<img src='" + ours + "'/>");
+		} else {
+			var poisson = species["fish"];
+			$("#holder").html("<img src='" + poisson + "'/>");
+		}
+	});
+
+}
+
+
+
+
+
+
 	/* 
 	tout votre code doit se trouver dans cette fonction,
 	vous pouvez biensur créer d'autres fonctions si nécessaire
@@ -17,11 +40,8 @@ function main(){
 	// 5. inserez cet élément dans l'élément ayant l'id holder
 	// 
 	// Conseils : avancez étape par étape, console.log et debugger autant que nécessaires !
-	
-	
-	 
-}
 
-$(document).ready(function(){
-	main();
-});
+
+	$(document).ready(function(){
+		main();
+	});
